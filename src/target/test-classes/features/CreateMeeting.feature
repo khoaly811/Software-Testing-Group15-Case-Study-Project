@@ -18,4 +18,4 @@ Tính năng: Dời lịch họp
 
     Dữ liệu:
       | Tiêu đề    | Mô tả | Thời gian bắt đầu | Thời gian kết thúc | Ngày     | Địa điểm |
-      |Họp Sprint 3|abc    |8:30 AM            |9:45 AM             |8/8/2024|HCMUS I41 |
+      |Sprint 1    |abc    |8:30 AM            |9:45 AM             |8/8/2024  |HCMUS I41 |

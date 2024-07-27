@@ -102,12 +102,88 @@ public class CreateMeetingSteps {
     public void popupNotification() throws InterruptedException {
         String popupMessage = driver.findElement(By.xpath(popupXpath)).getText();
         Assert.assertEquals(popupMessage, "Tạo lịch hẹn thành công");
+        System.out.println("popupMessage: " + popupMessage);
         Thread.sleep(1000);
     }
     @Và ("cuộc họp sẽ được tạo với các thông tin sau")
     public void assertInformation(DataTable dataTable) throws InterruptedException {
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//body[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/button[1]"))).click();
+        Thread.sleep(1000);
+        List<Map<String, String>> expectedDataList = dataTable.asMaps(String.class, String.class);
 
+        for (Map<String, String> expectedData : expectedDataList) {
+            String expectedTitle = expectedData.get("Tiêu đề");
+            String expectedDescription = expectedData.get("Mô tả");
+            String expectedStartTime = formatTime(expectedData.get("Thời gian bắt đầu"));
+            String expectedEndTime = formatTime(expectedData.get("Thời gian kết thúc"));
+            String expectedDate = expectedData.get("Ngày");
+            String expectedLocation = expectedData.get("Địa điểm");
+
+            // Retrieve actual data from the application's UI
+            String actualTitle = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html[1]/body[1]/div[2]/div[3]/form[1]/div[1]/div[1]/div[1]/input[1]"))).getAttribute("value");
+            System.out.println("actualTitle: " + actualTitle);
+
+            String actualDescription = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html[1]/body[1]/div[2]/div[3]/form[1]/div[1]/div[2]/div[1]/textarea[1]"))).getText();
+            String actualStartTime = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html[1]/body[1]/div[2]/div[3]/form[1]/div[1]/div[3]/div[1]/div[1]/div[1]/input[1]"))).getAttribute("value");
+            System.out.println("actualStartTime: " + actualStartTime);
+            String actualEndTime = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html[1]/body[1]/div[2]/div[3]/form[1]/div[1]/div[3]/div[2]/div[1]/div[1]/input[1]"))).getAttribute("value");
+            String actualDate = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html[1]/body[1]/div[2]/div[3]/form[1]/div[1]/div[3]/div[3]/div[1]/div[1]/input[1]"))).getAttribute("value");
+            System.out.println("actualDate: " + actualDate);
+            String actualLocation = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html[1]/body[1]/div[2]/div[3]/form[1]/div[1]/div[4]/div[1]/input[1]"))).getAttribute("value");
+
+            // Ensure the date format matches
+            actualDate = formatDate(actualDate);
+            expectedDate = formatDate(expectedDate);
+
+            // Compare actual data with expected data
+            Assert.assertEquals(actualTitle, expectedTitle, "Title does not match");
+            Assert.assertEquals(actualDescription, expectedDescription, "Description does not match");
+            Assert.assertEquals(actualStartTime, expectedStartTime, "Start time does not match");
+            Assert.assertEquals(actualEndTime, expectedEndTime, "End time does not match");
+            Assert.assertEquals(actualDate, expectedDate, "Date does not match");
+            Assert.assertEquals(actualLocation, expectedLocation, "Location does not match");
+        }
     }
+    private String formatDate(String date) {
+        if (date == null || date.isEmpty()) {
+            throw new IllegalArgumentException("Date string cannot be null or empty");
+        }
+
+        // Split the date string
+        String[] dateParts = date.split("/");
+        int day = Integer.parseInt(dateParts[0]);
+        int month = Integer.parseInt(dateParts[1]);
+        int year = Integer.parseInt(dateParts[2]);
+
+        // Format day and month to ensure they are two digits
+        String formattedDay = String.format("%02d", day);
+        String formattedMonth = String.format("%02d", month);
+
+        // Return the formatted date in "dd/MM/yyyy"
+        return formattedDay + "/" + formattedMonth + "/" + year;
+    }
+    private String formatTime(String time) {
+        if (time == null || time.isEmpty()) {
+            throw new IllegalArgumentException("Time string cannot be null or empty");
+        }
+
+        String[] timeParts = time.split("[: ]");
+        if (timeParts.length < 2) {
+            throw new IllegalArgumentException("Time string is not in the expected format");
+        }
+
+        String hour = timeParts[0];
+        String minute = timeParts[1];
+        String period = timeParts.length > 2 ? timeParts[2] : ""; // Handle AM/PM if present
+
+        // Format hour and minute to ensure they are two digits
+        String formattedHour = String.format("%02d", Integer.parseInt(hour));
+        String formattedMinute = String.format("%02d", Integer.parseInt(minute));
+
+        // Return the formatted time with AM/PM
+        return formattedHour + ":" + formattedMinute + " " + period;
+    }
+
     private void selectTime(String time) throws InterruptedException {
         String[] timeParts = time.split("[: ]");
         String hour = timeParts[0];
@@ -173,7 +249,6 @@ public class CreateMeetingSteps {
                 break;
             }
             wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html[1]/body[1]/div[3]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/button[2]/*[name()='svg'][1]"))).click();
-            Thread.sleep(500);
         }
 
         // Select the day
