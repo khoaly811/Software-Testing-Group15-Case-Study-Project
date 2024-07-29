@@ -2,6 +2,7 @@ package com.hcmus.mentor.backend.steps;
 
 
 import com.hcmus.mentor.backend.hooks.CommonHooks;
+import io.cucumber.java.vi.Cho;
 import io.cucumber.java.vi.Khi;
 import io.cucumber.java.vi.Thì;
 import io.cucumber.java.vi.Và;
@@ -20,16 +21,16 @@ public class CreateMeetingStepsExcel {
     private final WebDriver driver = CommonHooks.driver;
     private final WebDriverWait wait = CommonHooks.wait;
     handler handler = new handler();
-    private List<Map<String, String>> dataList;
 
-    @Khi("người dùng chọn Lịch hẹn, người dùng bấm dấu cộng để thêm cuộc hẹn {string}")
-    public void clickAtMeeting(String excelFilePath) throws InterruptedException, IOException {
-        dataList = handler.readExcelData(excelFilePath);
+    @Cho("người dùng chọn Cuộc hẹn trên màn hình")
+    public void clickAtMeeting() {
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html[1]/body[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/div[7]/div[1]/div[1]/div[1]/div[1]"))).click();
     }
 
-    @Và("người dùng bấm chọn Tạo lịch hẹn")
-    public void openFormMeeting() throws InterruptedException {
+    @Và("một cuộc hẹn đã được tạo với các thông tin hợp lệ từ file excel: {string}")
+    public void openFormMeeting(String excelFilePath) throws InterruptedException, IOException {
+        List<Map<String, String>> dataList = handler.readExcelData(excelFilePath);
+
         for (Map<String, String> data : dataList) {
             wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html[1]/body[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[1]/div[1]/button[2]"))).click();
 

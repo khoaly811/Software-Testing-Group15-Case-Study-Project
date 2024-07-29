@@ -1,13 +1,15 @@
 #language: vi
 @excel
-Tính năng: Dời lịch họp
+Tính năng: Tạo cuộc họp
   Bối cảnh:
     Cho một người dùng di chuyển đến trang đăng nhập
     Và người dùng đó nhập email và mật khẩu
     Cho người dùng đang ở trang Quản lý nhóm và di chuyển đến phần Nhắn tin
     Cho người dùng chọn nhóm và di chuyển đến cuộc trò chuyện chung
 
-  Kịch bản: Dời lịch họp thành công
-    Khi người dùng chọn Lịch hẹn, người dùng bấm dấu cộng để thêm cuộc hẹn "src/test/resources/input_cuocHop_test.xlsx"
-    Và người dùng bấm chọn Tạo lịch hẹn
+  Kịch bản: Tạo cuộc họp thành công
+    Cho người dùng chọn Cuộc hẹn trên màn hình
+    Khi một cuộc hẹn đã được tạo với các thông tin hợp lệ từ file excel: "src/test/resources/input_cuocHop_test.xlsx"
     Thì màn hình sẽ xuất hiện thông báo đã tạo lịch hẹn thành công
+
+
