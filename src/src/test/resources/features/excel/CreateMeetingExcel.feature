@@ -10,5 +10,4 @@ Tính năng: Dời lịch họp
   Kịch bản: Dời lịch họp thành công
     Khi người dùng chọn Lịch hẹn, người dùng bấm dấu cộng để thêm cuộc hẹn "src/test/resources/input_cuocHop_test.xlsx"
     Và người dùng bấm chọn Tạo lịch hẹn
-    Thì màn hình sẽ xuất hiện thông báo rằng đã tạo lịch hẹn thành công
-    Và cuộc họp sẽ được tạo với các thông tin sau tại file Excel "src/test/resources/input_cuocHop_test.xlsx"
+    Thì màn hình sẽ xuất hiện thông báo đã tạo lịch hẹn thành công

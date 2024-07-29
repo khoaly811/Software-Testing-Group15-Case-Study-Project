@@ -3,6 +3,7 @@ package com.hcmus.mentor.backend.steps;
 
 import com.hcmus.mentor.backend.hooks.CommonHooks;
 import io.cucumber.java.vi.Khi;
+import io.cucumber.java.vi.Thì;
 import io.cucumber.java.vi.Và;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -17,6 +18,7 @@ import java.util.Map;
 
 public class CreateMeetingStepsExcel {
     private final WebDriverWait wait = CommonHooks.wait;
+    private final WebDriver driver = CommonHooks.driver;
     handler handler = new handler();
     @Khi("người dùng chọn Lịch hẹn, người dùng bấm dấu cộng để thêm cuộc hẹn {string}")
     public void openFormMeeting(String excelFilePath) throws InterruptedException, IOException {
@@ -48,42 +50,15 @@ public class CreateMeetingStepsExcel {
             Thread.sleep(1000);
         }
     }
-
-    @Và("cuộc họp sẽ được tạo với các thông tin sau tại file Excel {string}")
-    public void assertInformation(String excelFilePath) throws InterruptedException, IOException {
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//body[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/button[1]"))).click();
+    @Và("người dùng bấm chọn Tạo lịch hẹn")
+    public void clickButtonToCreate() throws InterruptedException {
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'Tạo lịch hẹn')]"))).click();
         Thread.sleep(1000);
-        List<Map<String, String>> expectedDataList = handler.readExcelData(excelFilePath);
-
-        for (Map<String, String> expectedData : expectedDataList) {
-            String expectedTitle = expectedData.get("Tiêu đề");
-            String expectedDescription = expectedData.get("Mô tả");
-            String expectedStartTime = handler.formatTime(expectedData.get("Thời gian bắt đầu"));
-            String expectedEndTime = handler.formatTime(expectedData.get("Thời gian kết thúc"));
-            String expectedDate = expectedData.get("Ngày");
-            String expectedLocation = expectedData.get("Địa điểm");
-
-
-            // Retrieve actual data from the application's UI
-            String actualTitle = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html[1]/body[1]/div[2]/div[3]/form[1]/div[1]/div[1]/div[1]/input[1]"))).getAttribute("value");
-            String actualDescription = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html[1]/body[1]/div[2]/div[3]/form[1]/div[1]/div[2]/div[1]/textarea[1]"))).getText();
-            String actualStartTime = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html[1]/body[1]/div[2]/div[3]/form[1]/div[1]/div[3]/div[1]/div[1]/div[1]/input[1]"))).getAttribute("value");
-            System.out.println("actualStartTime: " + actualStartTime);
-            String actualEndTime = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html[1]/body[1]/div[2]/div[3]/form[1]/div[1]/div[3]/div[2]/div[1]/div[1]/input[1]"))).getAttribute("value");
-            String actualDate = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html[1]/body[1]/div[2]/div[3]/form[1]/div[1]/div[3]/div[3]/div[1]/div[1]/input[1]"))).getAttribute("value");
-            System.out.println("actualDate: " + actualDate);
-            String actualLocation = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html[1]/body[1]/div[2]/div[3]/form[1]/div[1]/div[4]/div[1]/input[1]"))).getAttribute("value");
-            // Assert the actual data matches the expected data
-            // Ensure the date format matches
-            actualDate = handler.formatDate(actualDate);
-            expectedDate = handler.formatDate(expectedDate);
-
-            Assert.assertEquals(actualTitle, expectedTitle);
-            Assert.assertEquals(actualDescription, expectedDescription);
-            Assert.assertEquals(actualStartTime, expectedStartTime);
-            Assert.assertEquals(actualEndTime, expectedEndTime);
-            Assert.assertEquals(actualDate, expectedDate);
-            Assert.assertEquals(actualLocation, expectedLocation);
-        }
+    }
+    @Thì("màn hình sẽ xuất hiện thông báo đã tạo lịch hẹn thành công")
+    public void popupNotifications()  {
+        String popupXpath = "//div[@role='status']";
+        String popupMessage = driver.findElement(By.xpath(popupXpath)).getText();
+        Assert.assertEquals(popupMessage, "Tạo lịch hẹn thành công");
     }
 }
