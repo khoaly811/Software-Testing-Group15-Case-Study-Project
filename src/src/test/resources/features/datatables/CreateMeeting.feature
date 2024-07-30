@@ -13,7 +13,7 @@ Tính năng: Dời lịch họp
       | Tiêu đề    | Mô tả | Thời gian bắt đầu | Thời gian kết thúc | Ngày     | Địa điểm |
       |Sprint 1    |abc    |8:30 AM            |9:45 AM             |8/8/2024  |HCMUS I41 |
       |Sprint 2    |abc    |8:30 AM            |9:45 AM             |8/8/2024  |HCMUS I41 |
-      |Sprint 3    |abc    |8:30 AM            |9:45 AM             |8/8/2024  |HCMUS I41 |
+  |Sprint 3    |abc    |8:30 AM            |9:45 AM             |8/8/2024  |HCMUS I41 |
     Thì màn hình sẽ xuất hiện thông báo rằng đã tạo lịch hẹn thành công
 
   Kịch bản: Tạo cuộc họp thất bại
@@ -25,7 +25,20 @@ Tính năng: Dời lịch họp
       |Sprint 3    |abc    |8:30 AM            |9:45 AM             |8/8/2024  |P3izBhH1VXxBUByFDVFZ5JKTWmnBU0F7IKKeq99TrE0lyEVoGgYRgcfMpCbFwbQ6jkFHXQ4QyhiO8J0Z5nNFw8GKVr7epODEv7i2AR5k6GQA8NuKbuYfXopfxM4t4AOwSDAQh6ckhW4iLdoVnUdPRphgb6aruDv7vP8cJxfFR6uE9ZWD5xE53zzdeGcG3chVPCxk6dKG5gnjE2FJYpyRpRAJYA6xpCy7s05UbqyuICPis9UeHFGDoQ8xt2JZ9ZKv |
     Thì màn hình sẽ xuất hiện thông báo rằng đã tạo lịch hẹn thất bại
 
-#  Kịch bản: Không tạo được cuộc họp do để trống trường thông tin
-#    Cho người dùng chọn Lịch hẹn
-#    Khi một cuộc hẹn được tạo với các trường Tiêu đề hoặc Người tham dự để trống
-#    Thì form tạo cuộc hẹn sẽ xuất hiện các thông báo lỗi tại trường thông tin để trống
+  Kịch bản: Không tạo được cuộc họp do để trống trường thông tin
+    Cho người dùng chọn Lịch hẹn
+    Khi một cuộc hẹn được tạo với trường Tiêu đề để trống
+      |Mô tả | Thời gian bắt đầu | Thời gian kết thúc | Ngày     | Địa điểm |
+      |abc   |8:30 AM            |9:45 AM             |8/8/2024  |HCMUS I41 |
+    Thì form tạo cuộc hẹn sẽ xuất hiện thông báo Vui lòng nhập tiêu đề
+
+  Kịch bản: Không tạo được cuộc họp do không chọn người tham dự
+    Cho người dùng chọn Lịch hẹn
+    Khi một cuộc hẹn được tạo với danh sách Người tham dự để trống
+      | Tiêu đề    | Mô tả | Thời gian bắt đầu | Thời gian kết thúc | Ngày     | Địa điểm |
+      |Sprint 1    |abc    |8:30 AM            |9:45 AM             |8/8/2024  |HCMUS I41 |
+    Thì form tạo cuộc hẹn sẽ xuất hiện thông báo Vui lòng chọn người tham gia lịch hẹn
+
+
+
+
