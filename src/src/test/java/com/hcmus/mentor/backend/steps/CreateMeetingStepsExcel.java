@@ -21,7 +21,18 @@ public class CreateMeetingStepsExcel {
     private final WebDriver driver = CommonHooks.driver;
     private final WebDriverWait wait = CommonHooks.wait;
     handler handler = new handler();
+    @Cho("người dùng đang ở trang Quản lý nhóm và chuyển đến phần Nhắn tin")
+    public void moveToMessager() throws InterruptedException {
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(@href,'/chat')]//li[contains(@class,'MuiListItem-root MuiListItem-padding css-1l9osrx-MuiListItem-root')]//div[contains(@class,'MuiBox-root css-v7ygw')]"))).click();
+        Thread.sleep(1000);
+    }
 
+    @Cho("người dùng chọn và di chuyển đến cuộc trò chuyện chung")
+    public void moveToConversation() throws InterruptedException {
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@aria-label='Nhóm Cucumber']"))).click();
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@aria-label='Cuộc trò chuyện chung']//div[1]"))).click();
+        Thread.sleep(1000);
+    }
     @Cho("người dùng chọn Cuộc hẹn trên màn hình")
     public void clickAtMeeting() {
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html[1]/body[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/div[7]/div[1]/div[1]/div[1]/div[1]"))).click();

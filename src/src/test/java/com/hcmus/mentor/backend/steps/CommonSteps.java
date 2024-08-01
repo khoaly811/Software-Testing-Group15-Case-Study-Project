@@ -19,25 +19,14 @@ public class CommonSteps {
 
     @Và ("người dùng đó nhập email và mật khẩu")
     public void logInMentorUS() throws InterruptedException {
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@id='identifierId']"))).sendKeys("ldkhoa21@clc.fitus.edu.vn");
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@id='identifierId']"))).sendKeys("lcnhan21@clc.fitus.edu.vn");
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[contains(text(), 'Next')]"))).click();
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@name='Passwd']"))).sendKeys("taokingucfan2k3");
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@name='Passwd']"))).sendKeys("Treblaatfan1463");
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[contains(text(), 'Next')]"))).click();
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[normalize-space()='Continue']"))).click();
         Thread.sleep(1000);
     }
 
-    @Cho("người dùng đang ở trang Quản lý nhóm và di chuyển đến phần Nhắn tin")
-    public void moveToMessage() throws InterruptedException {
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(@href,'/chat')]//li[contains(@class,'MuiListItem-root MuiListItem-padding css-1l9osrx-MuiListItem-root')]//div[contains(@class,'MuiBox-root css-v7ygw')]"))).click();
-        Thread.sleep(1000);
-    }
 
-    @Cho("người dùng chọn nhóm và di chuyển đến cuộc trò chuyện chung")
-    public void moveToConversation() throws InterruptedException {
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@aria-label='Nhóm Cucumber']"))).click();
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@aria-label='Cuộc trò chuyện chung']//div[1]"))).click();
-        Thread.sleep(1000);
-    }
 }
 
