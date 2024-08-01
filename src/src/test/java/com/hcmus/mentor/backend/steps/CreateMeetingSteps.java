@@ -5,7 +5,6 @@ import io.cucumber.datatable.DataTable;
 import io.cucumber.java.vi.Cho;
 import io.cucumber.java.vi.Khi;
 import io.cucumber.java.vi.Thì;
-import io.cucumber.java.vi.Và;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -22,7 +21,11 @@ public class CreateMeetingSteps{
     private List<Map<String, String>> dataList;
     @Cho("người dùng đang ở trang Quản lý nhóm và di chuyển đến phần Nhắn tin")
     public void moveToMessage() throws InterruptedException {
+<<<<<<< Updated upstream
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(@href,'/chat')]//li[contains(@class,'MuiListItem-root MuiListItem-padding css-1l9osrx-MuiListItem-root')]//div[contains(@class,'MuiBox-root css-v7ygw')]"))).click();
+=======
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html[1]/body[1]/div[1]/div[1]/div[1]/div[2]/a[1]/li[1]/div[1]"))).click();
+>>>>>>> Stashed changes
         Thread.sleep(1000);
     }
 
@@ -35,7 +38,6 @@ public class CreateMeetingSteps{
     @Cho("người dùng chọn Lịch hẹn")
     public void clickAtMeeting() {
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html[1]/body[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/div[7]/div[1]/div[1]/div[1]/div[1]"))).click();
-
     }
     @Khi("một cuộc hẹn đã được tạo với các thông tin hợp lệ")
     public void createMeetingSuccessfully(DataTable dataTable) throws InterruptedException {
@@ -56,7 +58,7 @@ public class CreateMeetingSteps{
             handler.selectTime(data.get("Thời gian kết thúc"));
             wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[normalize-space()='OK']"))).click();
 
-            handler.selectDate(data.get("Ngày"));
+            handler.selectDateForMeeting(data.get("Ngày"));
 
             wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html[1]/body[1]/div[2]/div[3]/form[1]/div[1]/div[4]/div[1]/input[1]"))).sendKeys(data.get("Địa điểm"));
 
@@ -91,7 +93,7 @@ public class CreateMeetingSteps{
             handler.selectTime(data.get("Thời gian kết thúc"));
             wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[normalize-space()='OK']"))).click();
 
-            handler.selectDate(data.get("Ngày"));
+            handler.selectDateForMeeting(data.get("Ngày"));
 
             wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html[1]/body[1]/div[2]/div[3]/form[1]/div[1]/div[4]/div[1]/input[1]"))).sendKeys(data.get("Địa điểm"));
 
@@ -126,7 +128,7 @@ public class CreateMeetingSteps{
             handler.selectTime(data.get("Thời gian kết thúc"));
             wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[normalize-space()='OK']"))).click();
 
-            handler.selectDate(data.get("Ngày"));
+            handler.selectDateForMeeting(data.get("Ngày"));
 
             wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html[1]/body[1]/div[2]/div[3]/form[1]/div[1]/div[4]/div[1]/input[1]"))).sendKeys(data.get("Địa điểm"));
 
@@ -160,7 +162,7 @@ public class CreateMeetingSteps{
             handler.selectTime(data.get("Thời gian kết thúc"));
             wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[normalize-space()='OK']"))).click();
 
-            handler.selectDate(data.get("Ngày"));
+            handler.selectDateForMeeting(data.get("Ngày"));
 
             wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html[1]/body[1]/div[2]/div[3]/form[1]/div[1]/div[4]/div[1]/input[1]"))).sendKeys(data.get("Địa điểm"));
             // Empty list of attendees
