@@ -1,7 +1,6 @@
 package com.hcmus.mentor.backend.handlers;
 
 import com.hcmus.mentor.backend.hooks.CommonHooks;
-import com.hcmus.mentor.backend.steps.CommonSteps;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.By;
@@ -9,14 +8,12 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class handler{
     private final WebDriver driver = CommonHooks.driver;
@@ -100,7 +97,7 @@ public class handler{
 
         new Actions(driver).moveToElement(clockElement, xOffset, yOffset).click().perform();
     }
-    public void selectDate(String date) throws InterruptedException {
+    public void selectDateForMeeting(String date) throws InterruptedException {
         // Expected date format: "d/MM/yyyy"
         String[] dateParts = date.split("/");
         String day = dateParts[0];
@@ -132,6 +129,93 @@ public class handler{
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[normalize-space()='"+ day +"']"))).click();
         Thread.sleep(1000);
     }
+    public void selectDateGroup(String date) throws InterruptedException {
+        // Expected date format: "d/MM/yyyy"
+        String[] dateParts = date.split("/");
+        String day = dateParts[0];
+        String month = dateParts[1];
+
+        // Convert the target month to an integer
+        int targetMonth = Integer.parseInt(month);
+
+        // Map month names to their corresponding numerical values
+        Map<String, Integer> monthNameToNumber = new HashMap<>();
+        monthNameToNumber.put("January", 1);
+        monthNameToNumber.put("February", 2);
+        monthNameToNumber.put("March", 3);
+        monthNameToNumber.put("April", 4);
+        monthNameToNumber.put("May", 5);
+        monthNameToNumber.put("June", 6);
+        monthNameToNumber.put("July", 7);
+        monthNameToNumber.put("August", 8);
+        monthNameToNumber.put("September", 9);
+        monthNameToNumber.put("October", 10);
+        monthNameToNumber.put("November", 11);
+        monthNameToNumber.put("December", 12);
+
+        // Navigate to the correct month
+        while (true) {
+            String displayedMonthYear = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html[1]/body[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]"))).getText();
+            String displayedMonth = displayedMonthYear.split(" ")[0]; // This takes the first word, which is the month name
+
+            // Convert the displayed month to an integer
+            int displayedMonthNumber = monthNameToNumber.get(displayedMonth);
+            if (displayedMonthNumber != targetMonth) {
+                if (targetMonth < displayedMonthNumber) {
+                    // Click the previous month button
+                    wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html[1]/body[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/button[1]/*[name()='svg'][1]"))).click();
+                } else {
+                    // Click the next month button
+                    wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html[1]/body[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/button[2]/*[name()='svg'][1]"))).click();
+                }
+                Thread.sleep(500); // Wait for the calendar to update
+            } else {
+                break;
+            }
+        }
+        // Select the day
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@role='gridcell'][normalize-space()='"+ day +"']"))).click();
+        Thread.sleep(1000);
+    }
+    public void selectPermissions(String permissions) {
+        // Open the dropdown menu
+        WebElement dropdown = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html[1]/body[1]/div[2]/div[3]/div[1]/div[4]/div[1]/div[1]/div[1]")));
+        dropdown.click();
+
+        if (permissions.equalsIgnoreCase("Tất cả")) {
+            wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html[1]/body[1]/div[3]/div[1]/ul[1]/li[1]"))).click();
+            wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html[1]/body[1]/div[3]/div[1]/ul[1]/li[2]"))).click();
+            wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html[1]/body[1]/div[3]/div[1]/ul[1]/li[3]"))).click();
+            wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html[1]/body[1]/div[3]/div[1]/ul[1]/li[4]"))).click();
+            wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html[1]/body[1]/div[3]/div[1]/ul[1]/li[5]"))).click();
+            wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html[1]/body[1]/div[3]/div[1]/ul[1]/li[6]"))).click();
+            wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html[1]/body[1]/div[2]/div[3]/div[2]/button[1]"))).click();
+        } else {
+            String[] permissionList = permissions.split(", ");
+            for (String permission : permissionList) {
+                if (permission.equalsIgnoreCase("Quyền gửi file")){
+                    wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html[1]/body[1]/div[3]/div[1]/ul[1]/li[1]"))).click();
+                }
+                if (permission.equalsIgnoreCase("Quyền quản lí công việc")){
+                    wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html[1]/body[1]/div[3]/div[1]/ul[1]/li[2]"))).click();
+                }
+                if (permission.equalsIgnoreCase("Quyền quản lý lịch hẹn")){
+                    wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html[1]/body[1]/div[3]/div[1]/ul[1]/li[3]"))).click();
+                }
+                if (permission.equalsIgnoreCase("Quyền quản lý bảng tin")){
+                    wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html[1]/body[1]/div[3]/div[1]/ul[1]/li[4]"))).click();
+                }
+                if (permission.equalsIgnoreCase("Quyền quản lý câu hỏi thường gặp")){
+                    wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html[1]/body[1]/div[3]/div[1]/ul[1]/li[5]"))).click();
+                }
+                if (permission.equalsIgnoreCase("Quyền cài đặt nhóm")){
+                    wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html[1]/body[1]/div[3]/div[1]/ul[1]/li[6]"))).click();
+                }
+            }
+            dropdown.click();
+        }
+    }
+
     public List<Map<String, String>> readExcelData(String filePath) throws IOException {
         FileInputStream file = new FileInputStream(filePath);
         Workbook workbook = new XSSFWorkbook(file);

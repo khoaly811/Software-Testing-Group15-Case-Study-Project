@@ -3,7 +3,6 @@ package com.hcmus.mentor.backend.steps;
 
 import com.hcmus.mentor.backend.hooks.CommonHooks;
 import io.cucumber.java.vi.Cho;
-import io.cucumber.java.vi.Khi;
 import io.cucumber.java.vi.Thì;
 import io.cucumber.java.vi.Và;
 import org.openqa.selenium.*;
@@ -56,7 +55,7 @@ public class CreateMeetingStepsExcel {
             handler.selectTime(data.get("Thời gian kết thúc"));
             wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[normalize-space()='OK']"))).click();
 
-            handler.selectDate(data.get("Ngày"));
+            handler.selectDateForMeeting(data.get("Ngày"));
 
             wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html[1]/body[1]/div[2]/div[3]/form[1]/div[1]/div[4]/div[1]/input[1]"))).sendKeys(data.get("Địa điểm"));
 
