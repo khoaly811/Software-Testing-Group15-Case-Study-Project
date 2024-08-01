@@ -21,11 +21,9 @@ public class CreateMeetingSteps{
     private List<Map<String, String>> dataList;
     @Cho("người dùng đang ở trang Quản lý nhóm và di chuyển đến phần Nhắn tin")
     public void moveToMessage() throws InterruptedException {
-<<<<<<< Updated upstream
+
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(@href,'/chat')]//li[contains(@class,'MuiListItem-root MuiListItem-padding css-1l9osrx-MuiListItem-root')]//div[contains(@class,'MuiBox-root css-v7ygw')]"))).click();
-=======
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html[1]/body[1]/div[1]/div[1]/div[1]/div[2]/a[1]/li[1]/div[1]"))).click();
->>>>>>> Stashed changes
+
         Thread.sleep(1000);
     }
 
