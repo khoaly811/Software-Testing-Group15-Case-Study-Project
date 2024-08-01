@@ -24,7 +24,7 @@ public class CommonSteps {
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@name='Passwd']"))).sendKeys("Treblaatfan1463");
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[contains(text(), 'Next')]"))).click();
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[normalize-space()='Continue']"))).click();
-        Thread.sleep(1000);
+        Thread.sleep(5000);
     }
 
 

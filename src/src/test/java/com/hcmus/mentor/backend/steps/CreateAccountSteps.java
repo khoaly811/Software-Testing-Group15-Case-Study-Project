@@ -45,7 +45,8 @@ public class CreateAccountSteps{
 
             // Click the input field to open the dropdown
             inputField.click();
-            String roleAcc = data.get("Họ tên");
+            String roleAcc = data.get("Vai trò");
+            System.out.println(roleAcc);
             // Wait for the dropdown options to be visible
             WebElement dropdownOption; // Replace with the actual XPath of the dropdown option
             if(roleAcc == "Quản trị viên"){
