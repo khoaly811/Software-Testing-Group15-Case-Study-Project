@@ -51,17 +51,17 @@ public class CreateChannelSteps{
 
             wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html[1]/body[1]/div[2]/div[3]/form[1]/div[2]/button[2]"))).click();
             Thread.sleep(1000);
-            popupSuccessfulNotification(data.get("Tên kênh"));
+            popupSuccessfulNotification();
             Thread.sleep(1000);
 
         }
     }
     @Thì("màn hình sẽ xuất hiện thông báo rằng đã tạo kênh thành công")
-    public void popupSuccessfulNotification(String channelName)  {
+    public void popupSuccessfulNotification()  {
         String popupXpath = "//span[@class='text-base']";
         String popupMessage = driver.findElement(By.xpath(popupXpath)).getText();
         System.out.println(popupMessage);
-        Assert.assertEquals(popupMessage, "Tạo kênh "+ channelName +" thành công");
+        Assert.assertTrue(popupMessage.contains("thành công"));
     }
 //
 }

@@ -1,5 +1,5 @@
 #language: vi
-@datatableCreateChannel
+@create_channel
 Tính năng: Tạo kênh nhóm
   Bối cảnh:
     Cho một người dùng di chuyển đến trang đăng nhập
@@ -11,7 +11,7 @@ Tính năng: Tạo kênh nhóm
     Và người dùng chọn nhóm Nhóm Cucumber
     Khi kênh được thêm với thông tin hợp lệ
       | Tên kênh         | Mô tả                      | Thành viên             |
-      |Nhân Lê           |A                           |All                     |
+      |Nhân L3           |A                           |All                     |
       |PTrinh            |trinhntp22@clc.fitus.edu.vn |All                     |
       |K                 |The sun set over the horizon, casting a golden hue across the landscape. Birds chirped melodiously, returning to their nests. Children played in the park, laughter echoing through the air. As the day ended, a sense of peace enveloped the town, promisings    |All        |
       |The sun set over the horizon, casting a golden hue across the landscape. Birds chirped melodiously, returning to their nests. Children played in the park, laughter echoing through the air. As the day ended, a sense of peace enveloped the town, promisings               |longname@gmail.com           |All|

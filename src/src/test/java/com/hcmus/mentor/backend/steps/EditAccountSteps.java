@@ -7,16 +7,14 @@ import io.cucumber.java.vi.Khi;
 import io.cucumber.java.vi.Thì;
 import io.cucumber.java.vi.Và;
 import org.openqa.selenium.*;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import com.hcmus.mentor.backend.handlers.handler;
 import java.util.List;
 import java.util.Map;
 
-public class EditAccount{
+public class EditAccountSteps {
     private final WebDriver driver = CommonHooks.driver;
     private final WebDriverWait wait = CommonHooks.wait;
     handler handler = new handler();
