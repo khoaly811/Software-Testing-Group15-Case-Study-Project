@@ -19,9 +19,9 @@ public class CommonSteps {
 
     @Và ("người dùng đó nhập email và mật khẩu")
     public void logInMentorUS() throws InterruptedException {
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@id='identifierId']"))).sendKeys("ldkhoa21@clc.fitus.edu.vn");
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@id='identifierId']"))).sendKeys("lcnhan21@clc.fitus.edu.vn");
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[contains(text(), 'Next')]"))).click();
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@name='Passwd']"))).sendKeys("taokingucfan2k3");
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@name='Passwd']"))).sendKeys("Treblaatfan1463");
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[contains(text(), 'Next')]"))).click();
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[normalize-space()='Continue']"))).click();
         Thread.sleep(5000);
