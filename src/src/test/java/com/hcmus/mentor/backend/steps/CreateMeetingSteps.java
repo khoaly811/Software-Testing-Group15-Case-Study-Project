@@ -29,7 +29,7 @@ public class CreateMeetingSteps{
 
     @Cho("người dùng chọn nhóm và di chuyển đến cuộc trò chuyện chung")
     public void moveToConversation() throws InterruptedException {
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@aria-label='Nhóm Cucumber']"))).click();
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@aria-label='Nhóm Cucumber 2']"))).click();
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@aria-label='Cuộc trò chuyện chung']//div[1]"))).click();
         Thread.sleep(1000);
     }
@@ -165,9 +165,9 @@ public class CreateMeetingSteps{
             wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html[1]/body[1]/div[2]/div[3]/form[1]/div[1]/div[4]/div[1]/input[1]"))).sendKeys(data.get("Địa điểm"));
             // Empty list of attendees
             Actions builder = new Actions(driver);
-            WebElement element = driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[3]/form[1]/div[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[4]/button[2]/*[name()='svg'][1]"));
+            WebElement element = driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[3]/form[1]/div[1]/div[5]/div[1]/div[1]/div[1]/div[1]"));
             builder.moveToElement(element).build().perform();
-            wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html[1]/body[1]/div[2]/div[3]/form[1]/div[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[4]/button[1]/*[name()='svg'][1]"))).click();
+            wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@title='Xóa hết']"))).click();
 
             wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'Tạo lịch hẹn')]"))).click();
             Thread.sleep(1000);

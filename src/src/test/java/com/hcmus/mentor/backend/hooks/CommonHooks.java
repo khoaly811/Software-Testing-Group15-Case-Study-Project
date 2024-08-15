@@ -5,6 +5,10 @@ import io.cucumber.java.Before;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.;
+
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
@@ -19,8 +23,12 @@ public class CommonHooks {
     @Before
     public void setUp() {
         if (driver == null) {
-            WebDriverManager.chromedriver().setup();
-            driver = new ChromeDriver();
+//            WebDriverManager.chromedriver().setup();
+//            driver = new ChromeDriver();
+//            WebDriverManager.edgedriver().setup();
+//            driver = new EdgeDriver();
+            WebDriverManager.operadriver().setup();
+            driver = new OperaDriver();
             driver.get("http://localhost:3000");
             driver.manage().window().maximize();
             driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);

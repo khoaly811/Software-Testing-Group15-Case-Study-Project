@@ -25,7 +25,7 @@ public class RescheduleMeetingSteps {
 
     @Cho("người dùng chọn nhóm và đi đến cuộc trò chuyện chung")
     public void moveToConversation() throws InterruptedException {
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@aria-label='Nhóm Cucumber']"))).click();
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@aria-label='Nhóm Cucumber 2']"))).click();
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@aria-label='Cuộc trò chuyện chung']//div[1]"))).click();
         Thread.sleep(1000);
     }

@@ -14,12 +14,12 @@ Tính năng: Dời một lịch hẹn
       |A           |abc    |8:30 AM            |9:45 AM             |28/8/2024 |H1        |
       |2           |a      |8:30 AM            |9:45 AM             |28/8/2024 |HCMUS I41 |
       |Sprint 3    |abc    |8:30 AM            |9:45 AM             |31/12/2024|P3izBhH1VXxBUByFDVFZ5JKTWmnBU0F7IKKeq99TrE0lyEVoGgYRgcfMpCbFwbQ6jkFHXQ4QyhiO8J0Z5nNFw8GKVr7epODEv7i2AR5k6GQA8NuKbuYfXopfxM4t4AOwSDAQh6ckhW4iLdoVnUdPRphgb6aruDv7vP8cJxfFR6uE9ZWD5xE53zzdeGcG3chVPCxk6dKG5gnjE2FJYpyRpRAJYA6xpCy7s05UbqyuICPis9UeHFGDoQ8xt2JZ9ZK |
-      |P3izBhH1VXxBUByFDVFZ5JKTWmnBU0F7IKKeq99TrE0lyEVoGgYRgcfMpCbFwbQ6jkFHXQ4QyhiO8J0Z5nNFw8GKVr7epODEv7i2AR5k6GQA8NuKbuYfXopfxM4t4AOwSDAQh6ckhW4iLdoVnUdPRphgb6aruDv7vP8cJxfFR6uE9ZWD5xE53zzdeGcG3chVPCxk6dKG5gnjE2FJYpyRpRAJYA6xpCy7s05UbqyuICPis9UeHFGDoQ8xt2JZ9ZK    |abc    |8:30 AM            |9:45 AM             |8/8/2024  |HCMUS I41 |
-      |Sprint 3    |P3izBhH1VXxBUByFDVFZ5JKTWmnBU0F7IKKeq99TrE0lyEVoGgYRgcfMpCbFwbQ6jkFHXQ4QyhiO8J0Z5nNFw8GKVr7epODEv7i2AR5k6GQA8NuKbuYfXopfxM4t4AOwSDAQh6ckhW4iLdoVnUdPRphgb6aruDv7vP8cJxfFR6uE9ZWD5xE53zzdeGcG3chVPCxk6dKG5gnjE2FJYpyRpRAJYA6xpCy7s05UbqyuICPis9UeHFGDoQ8xt2JZ9ZK    |8:30 AM            |9:45 AM             |8/8/2024  |HCMUS I41 |
+#      | zbFhNcIJ1Isq2WpcehNFKlb2mFIHsYJ1jUt89p7flDy8cI2XVDSnFgdbZPL5GTWI7nvcwFozvIDJS8lqv2JatGiOzbCE2GtEIhPl1   |abc    |8:30 AM            |9:45 AM             |18/8/2024  |HCMUS I41 |
+      |Sprint 3    |P3izBhH1VXxBUByFDVFZ5JKTWmnBU0F7IKKeq99TrE0lyEVoGgYRgcfMpCbFwbQ6jkFHXQ4QyhiO8J0Z5nNFw8GKVr7epODEv7i2AR5k6GQA8NuKbuYfXopfxM4t4AOwSDAQh6ckhW4iLdoVnUdPRphgb6aruDv7vP8cJxfFR6uE9ZWD5xE53zzdeGcG3chVPCxk6dKG5gnjE2FJYpyRpRAJYA6xpCy7s05UbqyuICPis9UeHFGDoQ8xt2JZ9ZK    |8:30 AM            |9:45 AM             |18/8/2024  |HCMUS I41 |
       |Sprint 3    |a      |8:30 AM            |9:45 AM             |28/8/2024 |HCMUS I41 |
       |Sprint 3    |abc    |8:30 AM            |9:45 AM             |31/12/2024|HCMUS I41 |
       |Sprint 3    |abc    |8:30 AM            |9:45 AM             |31/12/2024|P3izBhH1VXxBUByFDVFZ5JKTWmnBU0F7IKKeq99TrE0lyEVoGgYRgcfMpCbFwbQ6jkFHXQ4QyhiO8J0Z5nNFw8GKVr7epODEv7i2AR5k6GQA8NuKbuYfXopfxM4t4AOwSDAQh6ckhW4iLdoVnUdPRphgb6aruDv7vP8cJxfFR6uE9ZWD5xE53zzdeGcG3chVPCxk6dKG5gnjE2FJYpyRpRAJYA6xpCy7s05UbqyuICPis9UeHFGDoQ8xt2JZ9ZK |
-      |P3izBhH1VXxBUByFDVFZ5JKTWmnBU0F7IKKeq99TrE0lyEVoGgYRgcfMpCbFwbQ6jkFHXQ4QyhiO8J0Z5nNFw8GKVr7epODEv7i2AR5k6GQA8NuKbuYfXopfxM4t4AOwSDAQh6ckhW4iLdoVnUdPRphgb6aruDv7vP8cJxfFR6uE9ZWD5xE53zzdeGcG3chVPCxk6dKG5gnjE2FJYpyRpRAJYA6xpCy7s05UbqyuICPis9UeHFGDoQ8xt2JZ9ZK    |P3izBhH1VXxBUByFDVFZ5JKTWmnBU0F7IKKeq99TrE0lyEVoGgYRgcfMpCbFwbQ6jkFHXQ4QyhiO8J0Z5nNFw8GKVr7epODEv7i2AR5k6GQA8NuKbuYfXopfxM4t4AOwSDAQh6ckhW4iLdoVnUdPRphgb6aruDv7vP8cJxfFR6uE9ZWD5xE53zzdeGcG3chVPCxk6dKG5gnjE2FJYpyRpRAJYA6xpCy7s05UbqyuICPis9UeHFGDoQ8xt2JZ9ZK    |8:30 AM            |9:45 AM             |31/12/2024|P3izBhH1VXxBUByFDVFZ5JKTWmnBU0F7IKKeq99TrE0lyEVoGgYRgcfMpCbFwbQ6jkFHXQ4QyhiO8J0Z5nNFw8GKVr7epODEv7i2AR5k6GQA8NuKbuYfXopfxM4t4AOwSDAQh6ckhW4iLdoVnUdPRphgb6aruDv7vP8cJxfFR6uE9ZWD5xE53zzdeGcG3chVPCxk6dKG5gnjE2FJYpyRpRAJYA6xpCy7s05UbqyuICPis9UeHFGDoQ8xt2JZ9ZK |
+#      |P3izBhH1VXxBUByFDVFZ5JKTWmnBUF7IKKeq99TrE0lyEVoGgYRgcfMpCbFwbQ6jkFHXQ4QyhiO8J0Z5nNFw8GKVr7epODEv7i2AR5k6GQA8NuKbuYfXopfxM4t4AOwSDAQh6ckhW4iLdoVnUdPRphgb6aruDv7vP8cJxfFR6uE9ZWD5xE53zzdeGcG3chVPCxk6dKG5gnjE2FJYpyRpRAJYA6xpCy7s05UbqyuICPis9UeHFGDoQ8xt2JZ9ZK    |P3izBhH1VXxBUByFDVFZ5JKTWmnBU0F7IKKeq99TrE0lyEVoGgYRgcfMpCbFwbQ6jkFHXQ4QyhiO8J0Z5nNFw8GKVr7epODEv7i2AR5k6GQA8NuKbuYfXopfxM4t4AOwSDAQh6ckhW4iLdoVnUdPRphgb6aruDv7vP8cJxfFR6uE9ZWD5xE53zzdeGcG3chVPCxk6dKG5gnjE2FJYpyRpRAJYA6xpCy7s05UbqyuICPis9UeHFGDoQ8xt2JZ9ZK    |8:30 AM            |9:45 AM             |31/12/2024|P3izBhH1VXxBUByFDVFZ5JKTWmnBU0F7IKKeq99TrE0lyEVoGgYRgcfMpCbFwbQ6jkFHXQ4QyhiO8J0Z5nNFw8GKVr7epODEv7i2AR5k6GQA8NuKbuYfXopfxM4t4AOwSDAQh6ckhW4iLdoVnUdPRphgb6aruDv7vP8cJxfFR6uE9ZWD5xE53zzdeGcG3chVPCxk6dKG5gnjE2FJYpyRpRAJYA6xpCy7s05UbqyuICPis9UeHFGDoQ8xt2JZ9ZK |
     Thì màn hình sẽ xuất hiện thông báo rằng đã tạo lịch hẹn thành công
 
   Kịch bản: Tạo cuộc họp thất bại
@@ -28,9 +28,9 @@ Tính năng: Dời một lịch hẹn
     Cho người dùng chọn Lịch hẹn
     Khi một cuộc hẹn được tạo nhưng vượt quá 255 kí tự ở 1 trong 3 trường Tiêu đề, Mô tả, Địa điểm
       | Tiêu đề    | Mô tả | Thời gian bắt đầu | Thời gian kết thúc | Ngày     | Địa điểm |
-      |P3izBhH1VXxBUByFDVFZ5JKTWmnBU0F7IKKeq99TrE0lyEVoGgYRgcfMpCbFwbQ6jkFHXQ4QyhiO8J0Z5nNFw8GKVr7epODEv7i2AR5k6GQA8NuKbuYfXopfxM4t4AOwSDAQh6ckhW4iLdoVnUdPRphgb6aruDv7vP8cJxfFR6uE9ZWD5xE53zzdeGcG3chVPCxk6dKG5gnjE2FJYpyRpRAJYA6xpCy7s05UbqyuICPis9UeHFGDoQ8xt2JZ9ZKv    |abc    |8:30 AM            |9:45 AM             |8/8/2024  |HCMUS I41 |
-      |Sprint 2    |P3izBhH1VXxBUByFDVFZ5JKTWmnBU0F7IKKeq99TrE0lyEVoGgYRgcfMpCbFwbQ6jkFHXQ4QyhiO8J0Z5nNFw8GKVr7epODEv7i2AR5k6GQA8NuKbuYfXopfxM4t4AOwSDAQh6ckhW4iLdoVnUdPRphgb6aruDv7vP8cJxfFR6uE9ZWD5xE53zzdeGcG3chVPCxk6dKG5gnjE2FJYpyRpRAJYA6xpCy7s05UbqyuICPis9UeHFGDoQ8xt2JZ9ZKv    |8:30 AM            |9:45 AM             |8/8/2024  |HCMUS I41 |
-      |Sprint 3    |abc    |8:30 AM            |9:45 AM             |8/8/2024  |P3izBhH1VXxBUByFDVFZ5JKTWmnBU0F7IKKeq99TrE0lyEVoGgYRgcfMpCbFwbQ6jkFHXQ4QyhiO8J0Z5nNFw8GKVr7epODEv7i2AR5k6GQA8NuKbuYfXopfxM4t4AOwSDAQh6ckhW4iLdoVnUdPRphgb6aruDv7vP8cJxfFR6uE9ZWD5xE53zzdeGcG3chVPCxk6dKG5gnjE2FJYpyRpRAJYA6xpCy7s05UbqyuICPis9UeHFGDoQ8xt2JZ9ZKv |
+      |P3izBhH1VXxBUByFDVFZ5JKTWmnBU0F7IKKeq99TrE0lyEVoGgYRgcfMpCbFwbQ6jkFHXQ4QyhiO8J0Z5nNFw8GKVr7epODEv7i2AR5k6GQA8NuKbuYfXopfxM4t4AOwSDAQh6ckhW4iLdoVnUdPRphgb6aruDv7vP8cJxfFR6uE9ZWD5xE53zzdeGcG3chVPCxk6dKG5gnjE2FJYpyRpRAJYA6xpCy7s05UbqyuICPis9UeHFGDoQ8xt2JZ9ZKv    |abc    |8:30 AM            |9:45 AM             |18/8/2024  |HCMUS I41 |
+      |Sprint 2    |P3izBhH1VXxBUByFDVFZ5JKTWmnBU0F7IKKeq99TrE0lyEVoGgYRgcfMpCbFwbQ6jkFHXQ4QyhiO8J0Z5nNFw8GKVr7epODEv7i2AR5k6GQA8NuKbuYfXopfxM4t4AOwSDAQh6ckhW4iLdoVnUdPRphgb6aruDv7vP8cJxfFR6uE9ZWD5xE53zzdeGcG3chVPCxk6dKG5gnjE2FJYpyRpRAJYA6xpCy7s05UbqyuICPis9UeHFGDoQ8xt2JZ9ZKv    |8:30 AM            |9:45 AM             |18/8/2024  |HCMUS I41 |
+      |Sprint 3    |abc    |8:30 AM            |9:45 AM             |18/8/2024  |P3izBhH1VXxBUByFDVFZ5JKTWmnBU0F7IKKeq99TrE0lyEVoGgYRgcfMpCbFwbQ6jkFHXQ4QyhiO8J0Z5nNFw8GKVr7epODEv7i2AR5k6GQA8NuKbuYfXopfxM4t4AOwSDAQh6ckhW4iLdoVnUdPRphgb6aruDv7vP8cJxfFR6uE9ZWD5xE53zzdeGcG3chVPCxk6dKG5gnjE2FJYpyRpRAJYA6xpCy7s05UbqyuICPis9UeHFGDoQ8xt2JZ9ZKv |
     Thì màn hình sẽ xuất hiện thông báo rằng đã tạo lịch hẹn thất bại
 
   Kịch bản: Không tạo được cuộc họp do để trống trường thông tin
@@ -39,7 +39,7 @@ Tính năng: Dời một lịch hẹn
     Cho người dùng chọn Lịch hẹn
     Khi một cuộc hẹn được tạo với trường Tiêu đề để trống
       |Mô tả | Thời gian bắt đầu | Thời gian kết thúc | Ngày     | Địa điểm |
-      |abc   |8:30 AM            |9:45 AM             |8/8/2024  |HCMUS I41 |
+      |abc   |8:30 AM            |9:45 AM             |18/8/2024  |HCMUS I41 |
     Thì form tạo cuộc hẹn sẽ xuất hiện thông báo Vui lòng nhập tiêu đề
 
   Kịch bản: Không tạo được cuộc họp do không chọn người tham dự
@@ -48,7 +48,7 @@ Tính năng: Dời một lịch hẹn
     Cho người dùng chọn Lịch hẹn
     Khi một cuộc hẹn được tạo với danh sách Người tham dự để trống
       | Tiêu đề    | Mô tả | Thời gian bắt đầu | Thời gian kết thúc | Ngày     | Địa điểm |
-      |Sprint 1    |abc    |8:30 AM            |9:45 AM             |8/8/2024  |HCMUS I41 |
+      |Sprint 1    |abc    |8:30 AM            |9:45 AM             |19/8/2024  |HCMUS I41 |
     Thì form tạo cuộc hẹn sẽ xuất hiện thông báo Vui lòng chọn người tham gia lịch hẹn
 
 
