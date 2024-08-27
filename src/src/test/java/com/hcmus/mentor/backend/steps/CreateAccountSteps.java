@@ -171,9 +171,9 @@ public class CreateAccountSteps {
             wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html[1]/body[1]/div[2]/div[3]/div[1]/div[1]/div[1]/div[1]/input[1]"))).sendKeys(data.get("Họ tên"));
             wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html[1]/body[1]/div[2]/div[3]/div[1]/div[2]/div[1]/div[1]/input[1]"))).sendKeys(data.get("Email"));
 
-            wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html[1]/body[1]/div[2]/div[3]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/button[2]/*[name()='svg'][1]")));
+            wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html[1]/body[1]/div[2]/div[3]/div[1]/div[3]/div[1]/div[1]/div[1]/input[1]"))).click();
 
-            wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html[1]/body[1]/div[2]/div[3]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/button[1]/*[name()='svg'][1]")));
+            wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html[1]/body[1]/div[2]/div[3]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/button[1]"))).click();
 
             Thread.sleep(2000); // Wait to see the selection
             wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html[1]/body[1]/div[2]/div[3]/div[2]/button[1]/p[1]"))).click();
@@ -244,13 +244,13 @@ public class CreateAccountSteps {
 
     @Thì("màn hình sẽ xuất hiện thông báo rằng có trường email bị thiếu")
     public void popupFailNotificationEnail() {
-        WebElement emailError = driver.findElement(By.xpath("//p[@id=':r11:-helper-text' and contains(text(), 'Email không được rỗng')]"));
+        WebElement emailError = driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[3]/div[1]/div[2]/div[1]/p[1]"));
         Assert.assertEquals(emailError.getText(), "Email không được rỗng");
     }
 
     @Thì("màn hình sẽ xuất hiện thông báo rằng có trường vai trò bị thiếu")
     public void popupFailNotificationVaitro() {
-        WebElement valueError = driver.findElement(By.xpath("//p[@id=':r12:-helper-text' and contains(text(), 'Vui lòng chọn ít nhất 1 giá trị')]"));
+        WebElement valueError = driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[3]/div[1]/div[3]/div[1]/div[1]/p[1]"));
         Assert.assertEquals(valueError.getText(), "Vui lòng chọn ít nhất 1 giá trị");
     }
     @Thì("màn hình sẽ xuất hiện thông báo rằng email không hợp lệ")

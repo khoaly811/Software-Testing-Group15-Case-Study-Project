@@ -12,7 +12,7 @@ import org.testng.annotations.Test;
         plugin = {"pretty",
                 "html:target/cucumber-reports/CreateMeeting.html",
                 "json:target/cucumber-reports/CreateMeeting.json"},
-        tags = "@datatable"
+        tags = "@delete_category"
 )
 @Test
 public class TestRunnerDataTable extends AbstractTestNGCucumberTests {

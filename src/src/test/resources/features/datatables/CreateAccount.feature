@@ -26,7 +26,7 @@ Tính năng: Tạo tài khoản
     Khi tài khoản được thêm với email không hợp lệ
       | Họ tên         | Email                       | Vai trò              |
       |Nhân Lê         |@blavla                      |Quản trị viên cấp cao|
-      |A               |nhanle@blablabla             |Người dùng            |
+      |A               |nhanle@@blablabla             |Người dùng            |
       |Phương Trinh    |@gmail.com                   |Người dùng            |
 
     Thì màn hình sẽ xuất hiện thông báo rằng email không hợp lệ
@@ -58,7 +58,7 @@ Tính năng: Tạo tài khoản
     Và người dùng chọn Thêm tài khoản
     Khi tài khoản được thêm với thông tin không hợp lệ thiếu Vai trò
       | Họ tên         | Email                       |
-      |Nhân Lê         |lcnhan22@clc.fitus.edu.vn    |
+      |Nhân Lê         |lcnhan23@clc.fitus.edu.vn    |
 #      |A               |a@g.c                        |
 #      |The sun set over the horizon, casting a golden hue across the landscape. Birds chirped melodiously, returning to their nests. Children played in the park, laughter echoing through the air. As the day ended, a sense of peace enveloped the town, promisings               |longname@gmail.com           |
 #      |The sun set over the horizon, casting a golden hue across the landscape. Birds chirped melodiously, returning to their nests. Children played in the park, laughter echoing through the air. As the day ended, a sense of peace enveloped the town, promisings               |p@g.c                        |

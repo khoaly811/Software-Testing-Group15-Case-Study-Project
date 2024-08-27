@@ -29,7 +29,7 @@ public class CreateChannelSteps{
     }
     @Và("người dùng chọn nhóm Nhóm Cucumber")
     public void chooseAddAcc(){
-        driver.findElement(By.xpath("//button[@aria-label='Nhóm Cucumber']")).click();
+        driver.findElement(By.xpath("//button[@aria-label='TEST DELETE 8']")).click();
     }
     @Khi("kênh được thêm với thông tin hợp lệ")
     public void createMeetingSuccessfully(DataTable dataTable) throws InterruptedException {
